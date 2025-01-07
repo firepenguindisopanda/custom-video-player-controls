@@ -26,6 +26,13 @@ body {
   text-align: center;
 }
 
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(123, 49, 49, 0.1);
+}
+
 /* Video Styling */
 .screen {
   width: 100%;
@@ -52,7 +59,8 @@ body {
 .btn {
   background-color: #007bff;
   border: none;
-  border-radius: 50%;
+  border-radius: 0.5rem;
+  margin-right: 0.5rem;
   padding: 0.5rem;
   cursor: pointer;
   color: #fff;
@@ -102,9 +110,49 @@ body {
 
 /* Timestamp */
 .timestamp {
+  margin-left: 0.5rem;
   font-size: 1rem;
   color: #666;
 }
+
+.video-details {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+.video-details h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+.video-details p, .video-details li {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+.video-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.video-details ul li {
+  padding-left: 1.5em;
+  position: relative;
+}
+
+.video-details ul li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #007bff;
+}
+
 
 
 @media (max-width: 800px) {

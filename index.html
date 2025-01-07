@@ -13,10 +13,10 @@
     <body>
         <h1 id="video-title">Custom Video Player</h1>
         <video
-        src="videos/test_video.mp4"
+        src="videos/tech.webm"
         id="custom-video"
         class="screen"
-        poster="img/poster.png"
+        poster="img/poster_1.png"
         controls
         >
             <track src="subtitles/subtitles.vtt" kind="subtitles" srclang="en" label="English">
@@ -40,7 +40,12 @@
             />
             <span class="timestamp" id="timestamp">00:00</span>
         </div>
+        <div id="video-description" class="video-details">
+            <!-- Content will be dynamically loaded -->
+          </div>
+          
         <script src="script.js"></script>
+        <script src="render_json_data.js"></script>
     </body>
 
 </html>
