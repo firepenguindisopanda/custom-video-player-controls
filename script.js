@@ -2,8 +2,13 @@
 const video = document.getElementById('custom-video');
 const playButton = document.getElementById('play');
 const stopButton = document.getElementById('stop');
+const rewindButton = document.getElementById('rewind');
+const forwardButton = document.getElementById('forward');
 const progressBar = document.getElementById('progress');
 const timestamp = document.getElementById('timestamp');
+
+// Constants for rewind and forward
+const SKIP_TIME = 10; // seconds to skip forward or backward
 
 // Play or pause the video
 function toggleVideoStatus() {
@@ -38,6 +43,24 @@ function stopVideo() {
   updateProgress();
 }
 
+// Rewind the video by SKIP_TIME seconds
+function rewindVideo() {
+  const wasPlaying = !video.paused;
+  video.pause();
+  video.currentTime = Math.max(video.currentTime - SKIP_TIME, 0);
+  if (wasPlaying) video.play();
+  updateProgress();
+}
+
+// Forward the video by SKIP_TIME seconds
+function forwardVideo() {
+  const wasPlaying = !video.paused;
+  video.pause();
+  video.currentTime = Math.min(video.currentTime + SKIP_TIME, video.duration);
+  if (wasPlaying) video.play();
+  updateProgress();
+}
+
 // Add event listeners
 function addEventListeners() {
   video.addEventListener('click', toggleVideoStatus);
@@ -48,6 +71,9 @@ function addEventListeners() {
   playButton.addEventListener('click', toggleVideoStatus);
   stopButton.addEventListener('click', stopVideo);
   progressBar.addEventListener('input', setVideoProgress);
+
+  rewindButton.addEventListener('click', rewindVideo);
+  forwardButton.addEventListener('click', forwardVideo);
 }
 
 // Initialize player

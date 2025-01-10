@@ -71,23 +71,30 @@
                 <track src="descriptions/descriptions.vtt" kind="descriptions" srclang="en" label="English">
             </video>
             <div class="controls">
+                <button class="btn" id="rewind">
+                    <i class="fa fa-backward fa-2x"></i>
+                </button>
                 <button class="btn" id="play">
                     <i class="fa fa-play fa-2x"></i>
+                </button>
+                <button class="btn" id="forward">
+                    <i class="fa fa-forward fa-2x"></i>
                 </button>
                 <button class="btn" id="stop">
                     <i class="fa fa-stop fa-2x"></i>
                 </button>
                 <input
-                type="range"
-                id="progress"
-                class="progress"
-                min="0"
-                max="100"
-                step="0.1"
-                value="0"
+                    type="range"
+                    id="progress"
+                    class="progress"
+                    min="0"
+                    max="100"
+                    step="0.1"
+                    value="0"
                 />
                 <span class="timestamp" id="timestamp">00:00</span>
             </div>
+            
             <div id="time-watched-section" class="video-details">
                 <h2>Watch Time</h2>
                 <p id="time-watched">You have watched 0.00 seconds of this video.</p>
